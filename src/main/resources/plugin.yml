@@ -8,3 +8,7 @@ description: Manager features at your server
 commands:
   jessreload:
     usage: /<command>
+  heal:
+    usage: /<command>
+  feed:
+    usage: /<command>
