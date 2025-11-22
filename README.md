@@ -8,16 +8,19 @@ _The plugin will be expanded and improved with each new update._
 ### ⚙️ Possibilities (for now)
 _The plugin will have full customization and detailed settings for every aspect._  
 
-| **Features**      | **Description**                           |
-|-------------------|-------------------------------------------|
-| `Server MOTD`     | Your project design in the server list    |
-| `Greetings`       | Player join/quit/death messages           |
+| **Features**  | **Description**                        |
+|---------------|----------------------------------------|
+| `Server MOTD` | Your project design in the server list |
+| `Greetings`   | Player join/quit/death messages        |
+| `Heal & Feed` | Heal & Feed self and other             |
 
 ### ⌨️ Commands
 
-| **Commands**      | **Description**                           | **Permissions**       |
-|-------------------|-------------------------------------------|-----------------------|
-| `/jessreload`     | Reloading the plugin                      | `jess.reload`         |
+| **Commands**                 | **Description**                    | **Permissions**                 |
+|------------------------------|------------------------------------|---------------------------------|
+| `/jessreload`                | Reloading the plugin               | `jess.reload`                   |
+| `/heal`<p>`/heal [nickname]` | Heal yourself<p>Heal other players | `jess.heal`<p>`jess.heal.other` |
+| `/feed`<p>`/feed [nickname]` | Feed yourself<p>Feed other players | `jess.feed`<p>`jess.feed.other` |
 
 ### ✍️ Configuration
 
@@ -26,7 +29,7 @@ _The plugin will have full customization and detailed settings for every aspect.
 #                                                                                #
 #    ░░░░░██╗███████╗░██████╗░██████╗                                            #
 #    ░░░░░██║██╔════╝██╔════╝██╔════╝    Manager features at your server         #
-#    ░░░░░██║█████╗░░╚█████╗░╚█████╗░    Plugin version: JESS-v1.0               #
+#    ░░░░░██║█████╗░░╚█████╗░╚█████╗░    Plugin version: JESS-v1.1               #
 #    ██╗░░██║██╔══╝░░░╚═══██╗░╚═══██╗    Author: jFrostyBoy                      #
 #    ╚█████╔╝███████╗██████╔╝██████╔╝    Website: https://jfrostyboy.42web.io    #
 #    ░╚════╝░╚══════╝╚═════╝░╚═════╝░                                            #
@@ -36,16 +39,7 @@ _The plugin will have full customization and detailed settings for every aspect.
 #    Plugin prefix             #
 #    Leave blank to disable    #
 #    ----------------------    #
-prefix: "&8[&bJEss&8] "
-
-#    --------------------    #
-#    Main plugin messages    #
-#    --------------------    #
-
-main-messages:
-  no-permission: "&fYou &cdon't have &fpermission"
-  reload-usage: "&fUsage: &b/jessreload"
-  reloaded: "&fPlugin successfully &areloaded"
+prefix: "&8[&bJESS&8] "
 
 #    ------------------------------------------    #
 #    Formatting information about your             #
@@ -83,7 +77,7 @@ motd:
 join:
   enable: true
   join-message: "&b[+] &fPlayer &b%player% &fjoined the server"
-  first-join-message: "&a[-] &fPlayer &a%player% &fnewbie on the server"
+  first-join-message: "&a[+] &fPlayer &a%player% &fnewbie on the server"
 
   sounds:
     join:
@@ -117,6 +111,77 @@ death:
     volume: 1.0
     pitch: 1.1
 
+#    ----------------------------------------------------------------    #
+#    Heal & Feed - self and other                                        #
+#                                                                        #
+#    Personalized command delays for different donation groups           #
+#    (edit existing groups and add new ones as needed)                   #
+#                                                                        #
+#    Placeholder that is used:                                           #
+#      - %player% - displays the player's nickname                       #
+#      - %sec% - displays the remaining cooldown time                    #
+#    ----------------------------------------------------------------    #
+#    List of sounds that can be used:                                    #
+#    https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html      #
+#                                                                        #
+#    Minimum/maximum values:                                             #
+#      - volume: 0.1 - 1.0        - pitch: 0.5 - 2.0                     #
+#    ----------------------------------------------------------------    #
+
+heal:
+  enable: true
+  cooldowns:
+    default: 300
+    vip: 180
+    premium: 60
+
+  cooldown: "&fPlease wait &c%sec% sec. &fbefore using again"
+  success: "&fYou have &asuccessfully &frestored your health"
+  success-healed: "&fYou were &ahealed &fby &b%player%"
+  success-other: "&fYou have &asuccessfully &fhealed &b%player%"
+
+  heal-sound:
+    enable: true
+    sound: "entity.player.levelup"
+    volume: 1.0
+    pitch: 2.0
+
+heal-other:
+  enable: true
+
+feed:
+  enable: true
+  cooldowns:
+    default: 300
+    vip: 180
+    premium: 60
+
+  cooldown: "&fPlease wait &c%sec% sec. &fbefore using again"
+  success: "&fYou have &asuccessfully &ffeeded your hunger"
+  success-feeded: "&fYou were &afeeded &fby &b%player%"
+  success-other: "&fYou have &asuccessfully &ffeeded &b%player%"
+
+  feed-sound:
+    enable: true
+    sound: "entity.player.levelup"
+    volume: 1.0
+    pitch: 2.0
+
+feed-other:
+  enable: true
+
+#    --------------------    #
+#    Main plugin messages    #
+#    --------------------    #
+
+main-messages:
+  no-permission: "&fYou &cdon't have &fpermission"
+  reload-usage: "&fUsage: &b/jessreload"
+  reloaded: "&fPlugin successfully &areloaded"
+  disabled-command: "&fThis command is &cdisabled"
+  not-found: "&fPlayer &cnot found!"
+  only-players: "&fOnly &cplayers &fcan use this command"
 ```
 
 <img width="958" height="144" alt="image" src="https://github.com/user-attachments/assets/e2675fe7-bbd6-4e6c-a8bf-6c22d1d60298" />
+
