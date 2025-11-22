@@ -118,3 +118,5 @@ death:
     pitch: 1.1
 
 ```
+
+<img width="958" height="144" alt="image" src="https://github.com/user-attachments/assets/e2675fe7-bbd6-4e6c-a8bf-6c22d1d60298" />
