@@ -17,7 +17,7 @@ _The plugin will have full customization and detailed settings for every aspect.
 
 | **Commands**      | **Description**                           | **Permissions**       |
 |-------------------|-------------------------------------------|-----------------------|
-| `/jessreload`     | Player join/quit/death messages           | `jess.reload`         |
+| `/jessreload`     | Reloading the plugin                      | `jess.reload`         |
 
 ### ✍️ Configuration
 
@@ -116,4 +116,5 @@ death:
     sound: "entity.wither.death"
     volume: 1.0
     pitch: 1.1
+
 ```
