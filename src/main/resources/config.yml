@@ -2,7 +2,7 @@
 #                                                                                #
 #    ░░░░░██╗███████╗░██████╗░██████╗                                            #
 #    ░░░░░██║██╔════╝██╔════╝██╔════╝    Manager features at your server         #
-#    ░░░░░██║█████╗░░╚█████╗░╚█████╗░    Plugin version: JESS-v1.2               #
+#    ░░░░░██║█████╗░░╚█████╗░╚█████╗░    Plugin version: JESS-v1.3               #
 #    ██╗░░██║██╔══╝░░░╚═══██╗░╚═══██╗    Author: jFrostyBoy                      #
 #    ╚█████╔╝███████╗██████╔╝██████╔╝    Website: https://jfrostyboy.42web.io    #
 #    ░╚════╝░╚══════╝╚═════╝░╚═════╝░                                            #
@@ -144,10 +144,13 @@ feed-other:
   enable: true
 
 #    ----------------------------------------------------------------    #
-#    Flight mode - self and other                                        #
+#    Flight mode & Flight speed - self and other                         #
 #                                                                        #
 #    Placeholder that is used:                                           #
 #      - %player% - displays the player's nickname                       #
+#      - %executor% - displays the nickname of the person                #
+#                     who changed the player's speed                     #
+#      - %speed% - shows the set speed value                             #
 #    ----------------------------------------------------------------    #
 #    List of sounds that can be used:                                    #
 #    https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html      #
@@ -173,6 +176,23 @@ fly:
     pitch: 2.0
 
 fly-other:
+  enable: true
+
+flyspeed:
+  enable: true
+  flyspeed-usage: "&fUsage: &b/flyspeed [1-10] &for &b/flyspeed [nickname] [1-10]"
+  no-value: "&fEnter a number from &c1 &fto &c10"
+  success-self: "&fYour fly speed has been set to &a%speed%"
+  success-other: "&fFly speed of &b%player% &fhas been set to &a%speed%"
+  success-for-you: "&fFly speed set to &a%speed% &fby &b%executor%"
+
+  flyspeed-sound:
+    enable: true
+    sound: "entity.player.levelup"
+    volume: 1.0
+    pitch: 2.0
+
+flyspeed-other:
   enable: true
 
 #    --------------------    #
