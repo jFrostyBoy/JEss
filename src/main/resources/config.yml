@@ -2,7 +2,7 @@
 #                                                                                #
 #    ░░░░░██╗███████╗░██████╗░██████╗                                            #
 #    ░░░░░██║██╔════╝██╔════╝██╔════╝    Manager features at your server         #
-#    ░░░░░██║█████╗░░╚█████╗░╚█████╗░    Plugin version: JESS-v1.1               #
+#    ░░░░░██║█████╗░░╚█████╗░╚█████╗░    Plugin version: JESS-v1.2               #
 #    ██╗░░██║██╔══╝░░░╚═══██╗░╚═══██╗    Author: jFrostyBoy                      #
 #    ╚█████╔╝███████╗██████╔╝██████╔╝    Website: https://jfrostyboy.42web.io    #
 #    ░╚════╝░╚══════╝╚═════╝░╚═════╝░                                            #
@@ -141,6 +141,38 @@ feed:
     pitch: 2.0
 
 feed-other:
+  enable: true
+
+#    ----------------------------------------------------------------    #
+#    Flight mode - self and other                                        #
+#                                                                        #
+#    Placeholder that is used:                                           #
+#      - %player% - displays the player's nickname                       #
+#    ----------------------------------------------------------------    #
+#    List of sounds that can be used:                                    #
+#    https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html      #
+#                                                                        #
+#    Minimum/maximum values:                                             #
+#      - volume: 0.1 - 1.0        - pitch: 0.5 - 2.0                     #
+#    ----------------------------------------------------------------    #
+
+fly:
+  enable: true
+
+  enabled: "&fFlight successfully &aactivated"
+  disabled: "&fFlight successfully &cdeactivated"
+  enabled-other: "&fYour flight was &aactivated &fby &b%player%"
+  disabled-other: "&fYour flight was &cdeactivated &fby &b%player%"
+  enabled-other-success: "&fFlight &aactivated &ffor &b%player%"
+  disabled-other-success: "&fFlight &cdeactivated &ffor &b%player%"
+
+  fly-sound:
+    enable: true
+    sound: "entity.player.levelup"
+    volume: 1.0
+    pitch: 2.0
+
+fly-other:
   enable: true
 
 #    --------------------    #
