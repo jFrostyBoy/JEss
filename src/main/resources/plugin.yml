@@ -12,3 +12,5 @@ commands:
     usage: /<command>
   feed:
     usage: /<command>
+  fly:
+    usage: /<command>
