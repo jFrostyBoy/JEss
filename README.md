@@ -12,15 +12,17 @@ _The plugin will have full customization and detailed settings for every aspect.
 |---------------|----------------------------------------|
 | `Server MOTD` | Your project design in the server list |
 | `Greetings`   | Player join/quit/death messages        |
-| `Heal & Feed` | Heal & Feed self and other             |
+| `Heal & Feed` | Heal & Feed - self and other           |
+| `Fly`         | Flight mode - self and other           |
 
 ### ⌨️ Commands
 
-| **Commands**                 | **Description**                    | **Permissions**                 |
-|------------------------------|------------------------------------|---------------------------------|
-| `/jessreload`                | Reloading the plugin               | `jess.reload`                   |
-| `/heal`<p>`/heal [nickname]` | Heal yourself<p>Heal other players | `jess.heal`<p>`jess.heal.other` |
-| `/feed`<p>`/feed [nickname]` | Feed yourself<p>Feed other players | `jess.feed`<p>`jess.feed.other` |
+| **Commands**                 | **Description**                                                                 | **Permissions**                 |
+|------------------------------|---------------------------------------------------------------------------------|---------------------------------|
+| `/jessreload`                | Reloading the plugin                                                            | `jess.reload`                   |
+| `/heal`<p>`/heal [nickname]` | Heal yourself<p>Heal other players                                              | `jess.heal`<p>`jess.heal.other` |
+| `/feed`<p>`/feed [nickname]` | Feed yourself<p>Feed other players                                              | `jess.feed`<p>`jess.feed.other` |
+| `/fly`<p>`/fly [nickname]`   | Activate/Deactivate flight mode<p>Activate/Deactivate flight mode other players | `jess.fly`<p>`jess.fly.other`   |
 
 ### ✍️ Configuration
 
@@ -29,7 +31,7 @@ _The plugin will have full customization and detailed settings for every aspect.
 #                                                                                #
 #    ░░░░░██╗███████╗░██████╗░██████╗                                            #
 #    ░░░░░██║██╔════╝██╔════╝██╔════╝    Manager features at your server         #
-#    ░░░░░██║█████╗░░╚█████╗░╚█████╗░    Plugin version: JESS-v1.1               #
+#    ░░░░░██║█████╗░░╚█████╗░╚█████╗░    Plugin version: JESS-v1.2               #
 #    ██╗░░██║██╔══╝░░░╚═══██╗░╚═══██╗    Author: jFrostyBoy                      #
 #    ╚█████╔╝███████╗██████╔╝██████╔╝    Website: https://jfrostyboy.42web.io    #
 #    ░╚════╝░╚══════╝╚═════╝░╚═════╝░                                            #
@@ -170,6 +172,38 @@ feed:
 feed-other:
   enable: true
 
+#    ----------------------------------------------------------------    #
+#    Flight mode - self and other                                        #
+#                                                                        #
+#    Placeholder that is used:                                           #
+#      - %player% - displays the player's nickname                       #
+#    ----------------------------------------------------------------    #
+#    List of sounds that can be used:                                    #
+#    https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html      #
+#                                                                        #
+#    Minimum/maximum values:                                             #
+#      - volume: 0.1 - 1.0        - pitch: 0.5 - 2.0                     #
+#    ----------------------------------------------------------------    #
+
+fly:
+  enable: true
+
+  enabled: "&fFlight successfully &aactivated"
+  disabled: "&fFlight successfully &cdeactivated"
+  enabled-other: "&fYour flight was &aactivated &fby &b%player%"
+  disabled-other: "&fYour flight was &cdeactivated &fby &b%player%"
+  enabled-other-success: "&fFlight &aactivated &ffor &b%player%"
+  disabled-other-success: "&fFlight &cdeactivated &ffor &b%player%"
+
+  fly-sound:
+    enable: true
+    sound: "entity.player.levelup"
+    volume: 1.0
+    pitch: 2.0
+
+fly-other:
+  enable: true
+
 #    --------------------    #
 #    Main plugin messages    #
 #    --------------------    #
@@ -184,4 +218,5 @@ main-messages:
 ```
 
 <img width="958" height="144" alt="image" src="https://github.com/user-attachments/assets/e2675fe7-bbd6-4e6c-a8bf-6c22d1d60298" />
+
 
