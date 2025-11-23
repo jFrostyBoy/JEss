@@ -1,9 +1,6 @@
 package jfbdev.jess;
 
-import jfbdev.jess.commands.JEssFeedCommand;
-import jfbdev.jess.commands.JEssFlyCommand;
-import jfbdev.jess.commands.JEssHealCommand;
-import jfbdev.jess.commands.JEssReloadCommand;
+import jfbdev.jess.commands.*;
 import jfbdev.jess.listeners.JoinQuitDeathListener;
 import jfbdev.jess.listeners.ServerMotdListener;
 import org.bukkit.Bukkit;
@@ -25,12 +22,13 @@ public final class JEss extends JavaPlugin {
         Objects.requireNonNull(getCommand("heal")).setExecutor(new JEssHealCommand(this));
         Objects.requireNonNull(getCommand("feed")).setExecutor(new JEssFeedCommand(this));
         Objects.requireNonNull(getCommand("fly")).setExecutor(new JEssFlyCommand(this));
+        Objects.requireNonNull(getCommand("flyspeed")).setExecutor(new JEssFlySpeedCommand(this));
 
         Bukkit.getScheduler().runTaskLater(this, () -> {
             Bukkit.getConsoleSender().sendMessage("");
             Bukkit.getConsoleSender().sendMessage("§b    ░░░░░██╗███████╗░██████╗░██████╗");
             Bukkit.getConsoleSender().sendMessage("§b    ░░░░░██║██╔════╝██╔════╝██╔════╝§6    Manager features at your server");
-            Bukkit.getConsoleSender().sendMessage("§b    ░░░░░██║█████╗░░╚█████╗░╚█████╗░§f    Plugin version: §bJESS-v1.2");
+            Bukkit.getConsoleSender().sendMessage("§b    ░░░░░██║█████╗░░╚█████╗░╚█████╗░§f    Plugin version: §bJESS-v1.3");
             Bukkit.getConsoleSender().sendMessage("§b    ██╗░░██║██╔══╝░░░╚═══██╗░╚═══██╗§f    Author: §bjFrostyBoy");
             Bukkit.getConsoleSender().sendMessage("§b    ╚█████╔╝███████╗██████╔╝██████╔╝§f    Website: §bhttps://jfrostyboy.42web.io");
             Bukkit.getConsoleSender().sendMessage("§b    ░╚════╝░╚══════╝╚═════╝░╚═════╝░");
